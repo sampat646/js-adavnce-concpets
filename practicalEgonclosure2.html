@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dark mode - light mode</title>
+  </head>
+  <body>
+    <!-- creating buttons for dark mode and light mode -->
+    <div class="box">
+      <button id="dark">Dark Mode</button>
+      <button id="light">Light Mode</button>
+      <p>here making dark mode and light mode using js</p>
+    </div>
+    <!-- scripts for dark mode and light mode -->
+    <script>
+      function clickhandler(color) {
+        return function () {
+          // set background color
+          document.body.style.backgroundColor = `${color}`;
+          // set text color for light mode and dark mode and change text color for light mode and dark mode.
+          document.body.style.color = `${color === "#f4f4f4" ? "#333" : "#f4f4f4"}`;
+        };
+      }
+      document.getElementById("dark").onclick = clickhandler("#313131");
+      document.getElementById("light").onclick = clickhandler("#f4f4f4");
+    </script>
+  </body>
+</html>
