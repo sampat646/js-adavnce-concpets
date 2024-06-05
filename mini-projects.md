@@ -1,5 +1,5 @@
 ## color changer 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="container">
-    //you can add number buttons don't need to change the script.
+    <!-- you can add number buttons don't need to change the script. -->
     <button id="grey">grey</button>
     <button id="red">red</button>
     <button id="orange">orange</button>
