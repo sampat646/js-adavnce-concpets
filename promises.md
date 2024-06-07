@@ -1,4 +1,4 @@
-```javascrpit
+```javascript
 // first method
 const promiseone = new Promise(function (resolve, reject) {
   setTimeout(function () {
