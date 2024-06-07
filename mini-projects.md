@@ -65,3 +65,30 @@ form.addEventListener('submit', (e) => {
 });
 
 ```
+## Api handling 
+# I took api url from my github and accesed profile,username & bio
+```javascript
+const pro = document.getElementById("pro");
+const follwers = document.getElementById("name");
+const bio = document.getElementById("bio");
+const requestUrl = "https://api.github.com/users/sampat646";
+const xhr = new XMLHttpRequest();
+xhr.open("GET", requestUrl);
+xhr.send();
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4) {
+    const data = JSON.parse(this.responseText);
+    console.log(this.responseText);
+    console.log(data.id);
+    var profile = data.avatar_url;
+    var name = data.login;
+    var biodata = data.bio;
+    pro.src = profile;
+    console.log(name);
+    follwers.textContent = name;
+    bio.textContent = biodata;
+  }
+};
+
+
+```
