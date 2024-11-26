@@ -108,4 +108,98 @@ Since you're confident with **array destructuring**, the next step could be expl
 5. **Real-World Applications:**
    - Work on small projects or examples that use destructuring heavily, such as APIs returning complex JSON data.
 
-Let me know if you'd like to start with any specific topic!
+### Spread and Rest Operators
+
+The **spread** (`...`) and **rest** (`...`) operators are versatile tools in JavaScript, used in different contexts to make your code cleaner and more dynamic.
+
+---
+
+### **1. Spread Operator** (`...`):
+The spread operator is used to "spread out" the elements of an array, object, or iterable into individual elements.
+
+#### **Use Cases**:
+
+- **Copying Arrays:**
+  ```javascript
+  const arr1 = [1, 2, 3];
+  const arr2 = [...arr1]; // Creates a shallow copy
+  console.log(arr2); // Output: [1, 2, 3]
+  ```
+
+- **Merging Arrays:**
+  ```javascript
+  const arr1 = [1, 2];
+  const arr2 = [3, 4];
+  const merged = [...arr1, ...arr2];
+  console.log(merged); // Output: [1, 2, 3, 4]
+  ```
+
+- **Copying Objects:**
+  ```javascript
+  const obj1 = { a: 1, b: 2 };
+  const obj2 = { ...obj1 };
+  console.log(obj2); // Output: { a: 1, b: 2 }
+  ```
+
+- **Merging Objects:**
+  ```javascript
+  const obj1 = { a: 1, b: 2 };
+  const obj2 = { b: 3, c: 4 };
+  const merged = { ...obj1, ...obj2 }; // Later properties overwrite earlier ones
+  console.log(merged); // Output: { a: 1, b: 3, c: 4 }
+  ```
+
+- **Function Arguments:**
+  ```javascript
+  const numbers = [1, 2, 3];
+  console.log(Math.max(...numbers)); // Output: 3
+  ```
+
+---
+
+### **2. Rest Operator** (`...`):
+The rest operator is used to collect the remaining elements or properties into a new array or object.
+
+#### **Use Cases**:
+
+- **In Function Parameters:**
+  ```javascript
+  function sum(...numbers) {
+      return numbers.reduce((acc, curr) => acc + curr, 0);
+  }
+  console.log(sum(1, 2, 3)); // Output: 6
+  ```
+
+- **Destructuring Arrays:**
+  ```javascript
+  const arr = [1, 2, 3, 4];
+  const [first, ...rest] = arr;
+  console.log(first); // Output: 1
+  console.log(rest);  // Output: [2, 3, 4]
+  ```
+
+- **Destructuring Objects:**
+  ```javascript
+  const obj = { a: 1, b: 2, c: 3 };
+  const { a, ...rest } = obj;
+  console.log(a);    // Output: 1
+  console.log(rest); // Output: { b: 2, c: 3 }
+  ```
+
+---
+
+### **Differences Between Spread and Rest**:
+
+| **Feature**      | **Spread**                              | **Rest**                                |
+|-------------------|-----------------------------------------|-----------------------------------------|
+| **Purpose**       | Expands elements/properties.            | Collects elements/properties.           |
+| **Use Case**      | Arrays, objects, function calls.        | Destructuring, function parameters.     |
+| **Position**      | Used where individual elements are expected. | Used where a group of elements is expected. |
+
+---
+
+### **Practice Ideas**:
+1. Copy and merge arrays/objects.
+2. Write functions that take a variable number of arguments.
+3. Use rest in destructuring to extract subsets of data.
+
