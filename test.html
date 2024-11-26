@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comprehensive Interactive SQL Mind Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .mind-map {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            padding: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .map-title {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            font-weight: 900;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .category {
+            background-color: #f8f9fe;
+            border-radius: 20px;
+            padding: 25px;
+            width: calc(33.33% - 30px);
+            box-sizing: border-box;
+            border: 2px solid #e6e9f0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+            position: relative;
+        }
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+        }
+        .category-title {
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .sub-category {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .sub-category::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .info-popup {
+            display: none;
+            position: absolute;
+            background-color: #f0f4f8;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            z-index: 1000;
+            width: 300px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            top: 100%;
+            left: 0;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .sub-category:hover .info-popup {
+            display: block;
+        }
+        @media screen and (max-width: 1200px) {
+            .category {
+                width: calc(50% - 30px);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .category {
+                width: 100%;
+            }
+            .map-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mind-map">
+        <div class="map-title">SQL Mastery Mind Map</div>
+        
+        <!-- 3-Tier Architecture Section -->
+        <div class="section">
+            <div class="category">
+                <div class="category-title">3-Tier Architecture</div>
+                <div class="sub-category">1. Presentation Layer (UI)
+                    <div class="info-popup">
+                        • User interface management
+                        • Captures and displays user interactions
+                        • Sends user requests to application layer
+                        • Provides visual representation of data
+                    </div>
+                </div>
+                <div class="sub-category">2. Application Layer (Business Logic)
+                    <div class="info-popup">
+                        • Processes business rules and algorithms
+                        • Validates and transforms data
+                        • Mediates between UI and database layers
+                        • Implements core application functionality
+                    </div>
+                </div>
+                <div class="sub-category">3. Database Layer (Data Storage)
+                    <div class="info-popup">
+                        • Manages data persistence
+                        • Handles data retrieval and storage
+                        • Ensures data integrity and security
+                        • Supports complex query processing
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-title">Database Fundamentals</div>
+                <div class="sub-category">Data: Structured Information
+                    <div class="info-popup">
+                        • Organized collection of related information
+                        • Structured in tables, records, and fields
+                        • Supports efficient data management
+                        • Enables complex data manipulation
+                    </div>
+                </div>
+                <div class="sub-category">DBMS: Database Management System
+                    <div class="info-popup">
+                        • Software for database administration
+                        • Provides data creation and manipulation tools
+                        • Manages data storage and retrieval
+                        • Ensures data consistency and security
+                    </div>
+                </div>
+                <div class="sub-category">RDBMS: Relational DBMS
+                    <div class="info-popup">
+                        • Uses relational model for data organization
+                        • Data stored in interconnected tables
+                        • Supports SQL for data manipulation
+                        • Implements referential integrity
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category">
+                <div class="category-title">Codd's Rules</div>
+                <div class="sub-category">1. Information Rule
+                    <div class="info-popup">
+                        • All data must be representable as table values
+                        • Ensures data is logically structured
+                        • Supports comprehensive data representation
+                    </div>
+                </div>
+                <div class="sub-category">2. Guaranteed Access Rule
+                    <div class="info-popup">
+                        • Each data element must be accessible
+                        • Supports atomic data access
+                        • Prevents data isolation
+                    </div>
+                </div>
+                <div class="sub-category">3. Systematic Null Handling
+                    <div class="info-popup">
+                        • Provides consistent null value management
+                        • Supports null as a distinct data state
+                        • Ensures predictable null behavior
+                    </div>
+                </div>
+            </div>
+            <!-- Additional Sections Follow Similar Pattern -->
+            <!-- (Would include full content for Data Types, Constraints, etc.) -->
+             <!-- Data Types -->
+            <div class="category">
+                <div class="category-title">Data Types</div>
+                <div class="sub-category">CHAR
+                    <div class="info-popup">
+                        <ul>
+                            <li>Fixed-length character data</li>
+                            <li>Example: CHAR(10)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-category">VARCHAR
+                    <div class="info-popup">
+                        <ul>
+                            <li>Variable-length character data</li>
+                            <li>Example: VARCHAR(50)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-category">NUMBER
+                    <div class="info-popup">
+                        <ul>
+                            <li>Numeric data</li>
+                            <li>Example: NUMBER(10, 2)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-category">DATE
+                    <div class="info-popup">
+                        <ul>
+                            <li>Stores date and time</li>
+                            <li>Format: DD-MON-YYYY</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Constraints -->
+            <div class="category">
+                <div class="category-title">Constraints</div>
+                <div class="sub-category">NOT NULL
+                    <div class="info-popup">
+                        <ul>
+                            <li>Ensures a column cannot contain null values</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-category">UNIQUE
+                    <div class="info-popup">
+                        <ul>
+                            <li>Ensures all values in a column are unique</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-category">CHECK
+                    <div class="info-popup">
+                        <ul>
+                            <li>Validates values based on a condition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Primary Key vs Foreign Key -->
+            <div class="category">
+                <div class="category-title">Primary Key vs Foreign Key</div>
+                <div class="sub-category">Primary Key
+                    <div class="info-popup">
+                        <ul>
+                            <li>Uniquely identifies a record in a table</li>
+                            <li>Cannot have null values</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-category">Foreign Key
+                    <div class="info-popup">
+                        <ul>
+                            <li>References a primary key in another table</li>
+                            <li>Enforces referential integrity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- SQL Statements -->
+    <div class="category">
+        <div class="category-title">SQL Statements</div>
+        <div class="sub-category">DDL (Data Definition Language)
+            <div class="info-popup">
+                <ul>
+                    <li>CREATE: Creates a new table, view, or other object</li>
+                    <li>ALTER: Modifies an existing database object</li>
+                    <li>DROP: Deletes an object</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">DML (Data Manipulation Language)
+            <div class="info-popup">
+                <ul>
+                    <li>INSERT: Adds new rows to a table</li>
+                    <li>UPDATE: Modifies existing data</li>
+                    <li>DELETE: Removes rows from a table</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">TCL (Transaction Control Language)
+            <div class="info-popup">
+                <ul>
+                    <li>COMMIT: Saves changes permanently</li>
+                    <li>ROLLBACK: Reverts changes</li>
+                    <li>SAVEPOINT: Creates intermediate savepoints</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">DCL (Data Control Language)
+            <div class="info-popup">
+                <ul>
+                    <li>GRANT: Gives permissions to users</li>
+                    <li>REVOKE: Removes permissions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">DQL (Data Query Language)
+            <div class="info-popup">
+                <ul>
+                    <li>SELECT: Retrieves data from the database</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Operators -->
+    <div class="category">
+        <div class="category-title">Operators</div>
+        <div class="sub-category">Arithmetic Operators
+            <div class="info-popup">
+                <ul>
+                    <li>+, -, *, /, %</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Concatenation Operator
+            <div class="info-popup">
+                <ul>
+                    <li>Concatenates two strings</li>
+                    <li>Example: 'Hello' || 'World'</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Comparison Operators
+            <div class="info-popup">
+                <ul>
+                    <li>=, !=, >, <, >=, <=</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Logical Operators
+            <div class="info-popup">
+                <ul>
+                    <li>AND, OR, NOT</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Special Operators
+            <div class="info-popup">
+                <ul>
+                    <li>BETWEEN, IN, LIKE, IS NULL</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Set Operators
+            <div class="info-popup">
+                <ul>
+                    <li>UNION, INTERSECT, MINUS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Functions -->
+    <div class="category">
+        <div class="category-title">Functions</div>
+        <div class="sub-category">Single-Row Functions
+            <div class="info-popup">
+                <ul>
+                    <li>LENGTH(), CONCAT(), UPPER(), LOWER()</li>
+                    <li>INITCAP(), REVERSE(), SUBSTR()</li>
+                    <li>REPLACE(), INSTR(), TRIM()</li>
+                    <li>LPAD(), RPAD(), MOD(), POW()</li>
+                    <li>ROUND(), TRUNC()</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Multi-Row Functions
+            <div class="info-popup">
+                <ul>
+                    <li>MAX(), MIN(), COUNT()</li>
+                    <li>AVG(), SUM()</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- When to Use Clauses -->
+    <div class="category">
+        <div class="category-title">When to Use WHERE, HAVING, and GROUP BY</div>
+        <div class="sub-category">WHERE Clause
+            <div class="info-popup">
+                <ul>
+                    <li>Filters rows before grouping</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">HAVING Clause
+            <div class="info-popup">
+                <ul>
+                    <li>Filters groups after grouping</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">GROUP BY Clause
+            <div class="info-popup">
+                <ul>
+                    <li>Groups rows by specified columns</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Joins -->
+    <div class="category">
+        <div class="category-title">Joins</div>
+        <div class="sub-category">INNER JOIN
+            <div class="info-popup">
+                <ul>
+                    <li>Returns rows with matching values in both tables</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">LEFT JOIN
+            <div class="info-popup">
+                <ul>
+                    <li>Returns all rows from the left table and matching rows from the right</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">RIGHT JOIN
+            <div class="info-popup">
+                <ul>
+                    <li>Returns all rows from the right table and matching rows from the left</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">FULL OUTER JOIN
+            <div class="info-popup">
+                <ul>
+                    <li>Returns all rows from both tables</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Subqueries -->
+    <div class="category">
+        <div class="category-title">Subqueries</div>
+        <div class="sub-category">Single-Row Subquery
+            <div class="info-popup">
+                <ul>
+                    <li>Returns one row</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Multi-Row Subquery
+            <div class="info-popup">
+                <ul>
+                    <li>Returns multiple rows</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-category">Nested Subquery
+            <div class="info-popup">
+                <ul>
+                    <li>Contains one subquery inside another</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Date Functions -->
+     <div class="category">
+        <div class="category-title">Date functions</div>
+    <div class="sub-category">SYSDATE
+        <div class="info-popup">
+            <ul>
+                <li>Returns the current system date and time</li>
+                <li>Example: SELECT SYSDATE FROM dual;</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">CURRENT_DATE
+        <div class="info-popup">
+            <ul>
+                <li>Returns the current date based on the session's time zone</li>
+                <li>Example: SELECT CURRENT_DATE FROM dual;</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">SYSTIMESTAMP
+        <div class="info-popup">
+            <ul>
+                <li>Returns the system's current timestamp including date, time, and time zone</li>
+                <li>Example: SELECT SYSTIMESTAMP FROM dual;</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">TO_DATE
+        <div class="info-popup">
+            <ul>
+                <li>Converts a string into a date format</li>
+                <li>Syntax: TO_DATE('string', 'format')</li>
+                <li>Example: TO_DATE('2024-11-25', 'YYYY-MM-DD')</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">LAST_DAY
+        <div class="info-popup">
+            <ul>
+                <li>Returns the last day of the month for a given date</li>
+                <li>Example: SELECT LAST_DAY(SYSDATE) FROM dual;</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">ADD_MONTHS
+        <div class="info-popup">
+            <ul>
+                <li>Adds a specified number of months to a date</li>
+                <li>Syntax: ADD_MONTHS(date, number_of_months)</li>
+                <li>Example: ADD_MONTHS(SYSDATE, 2)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">MONTHS_BETWEEN
+        <div class="info-popup">
+            <ul>
+                <li>Calculates the number of months between two dates</li>
+                <li>Syntax: MONTHS_BETWEEN(date1, date2)</li>
+                <li>Example: MONTHS_BETWEEN('2024-11-25', '2024-10-25')</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="sub-category">NEXT_DAY
+        <div class="info-popup">
+            <ul>
+                <li>Returns the date of the next specified weekday after a given date</li>
+                <li>Syntax: NEXT_DAY(date, 'weekday')</li>
+                <li>Example: NEXT_DAY(SYSDATE, 'MONDAY')</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    </div>
+        
+
+
+</div>
+</div>
+</div>
+    
+
+    <script>
+        document.querySelectorAll('.sub-category').forEach(item => {
+            item.addEventListener('mouseover', event => {
+                const popup = event.currentTarget.querySelector('.info-popup');
+                if (popup) {
+                    popup.style.display = 'block';
+                }
+            });
+
+            item.addEventListener('mouseout', event => {
+                const popup = event.currentTarget.querySelector('.info-popup');
+                if (popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
